@@ -11,10 +11,10 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t webservergt:1.0 .
-      - docker tag webservergt:1.0 709973393692.dkr.ecr.us-west-2.amazonaws.com/webservergt:1.0
+      - docker build -t webservergt:2.0 .
+      - docker tag webservergt:2.0 709973393692.dkr.ecr.us-west-2.amazonaws.com/webservergt:2.0
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 709973393692.dkr.ecr.us-west-2.amazonaws.com/webservergt:1.0
+      - docker push 709973393692.dkr.ecr.us-west-2.amazonaws.com/webservergt:2.0
