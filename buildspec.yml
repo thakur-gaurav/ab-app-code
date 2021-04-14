@@ -3,13 +3,13 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --no-include-email --region $AWS_DEFAULT_REGION)
+      - $(aws ecr get-login --no-include-email --region us-west-2)
   build:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker build -t simpleapi:latest
-      - docker tag simpleapi:latest 709973393692.dkr.ecr.us-west-2.amazonaws.com/webservergt:latest
+      - docker build -t webservergt:latest
+      - docker tag webservergt:latest 709973393692.dkr.ecr.us-west-2.amazonaws.com/webservergt:latest
   post_build:
     commands:
       - echo Build completed on `date`
